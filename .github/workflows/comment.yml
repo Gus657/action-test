@@ -4,7 +4,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Decoration
-      if: "$GITHUB_EVENT_NAME == 'pull_request'"
+      if:  "!contains(github.event.name, 'push')"
       uses: mshick/add-pr-comment@v1
       with:
         message: |
